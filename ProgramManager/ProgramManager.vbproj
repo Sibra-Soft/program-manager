@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9EA409C-2480-4827-8AAA-175D3BF37731}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>ProgramManager</RootNamespace>
+    <AssemblyName>ProgramManager</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ProgramManager.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ProgramManager.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>program.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="TAFactory.IconPack">
+      <HintPath>..\..\_Library\IconPack\TAFactory.IconPack.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Core\Program.vb" />
+    <Compile Include="Classes\Extensions\DialogExtensions.vb" />
+    <Compile Include="Classes\Enums\FormTypes.vb" />
+    <Compile Include="Classes\Models\DialogRequestModel.vb" />
+    <Compile Include="Classes\Models\GroupModel.vb" />
+    <Compile Include="Classes\Models\ProgramModel.vb" />
+    <Compile Include="Classes\Services\PickIconDialog.vb" />
+    <Compile Include="Forms\Groups\Form_CreateGroup.Designer.vb">
+      <DependentUpon>Form_CreateGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Groups\Form_CreateGroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Groups\Form_Group.Designer.vb">
+      <DependentUpon>Form_Group.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Groups\Form_Group.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Groups\Form_Group_Prompt.Designer.vb">
+      <DependentUpon>Form_Group_Prompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Groups\Form_Group_Prompt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Form_About.Designer.vb">
+      <DependentUpon>Form_About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Form_About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Form_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Form_Main.Designer.vb">
+      <DependentUpon>Form_Main.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Programs\Form_Program_Copy.Designer.vb">
+      <DependentUpon>Form_Program_Copy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Programs\Form_Program_Copy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Programs\Form_Program_Move.Designer.vb">
+      <DependentUpon>Form_Program_Move.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Programs\Form_Program_Move.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Programs\Form_Program_Properties.Designer.vb">
+      <DependentUpon>Form_Program_Properties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Programs\Form_Program_Properties.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Run\Form_Run.Designer.vb">
+      <DependentUpon>Form_Run.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Run\Form_Run.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Groups\Form_CreateGroup.resx">
+      <DependentUpon>Form_CreateGroup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Groups\Form_Group.resx">
+      <DependentUpon>Form_Group.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Groups\Form_Group_Prompt.resx">
+      <DependentUpon>Form_Group_Prompt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Form_About.resx">
+      <DependentUpon>Form_About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Form_Main.resx">
+      <DependentUpon>Form_Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Programs\Form_Program_Copy.resx">
+      <DependentUpon>Form_Program_Copy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Programs\Form_Program_Move.resx">
+      <DependentUpon>Form_Program_Move.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Programs\Form_Program_Properties.resx">
+      <DependentUpon>Form_Program_Properties.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Run\Form_Run.resx">
+      <DependentUpon>Form_Run.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="program.ico" />
+    <None Include="Resources\program.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
